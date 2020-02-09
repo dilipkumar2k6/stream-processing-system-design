@@ -62,6 +62,8 @@ That's why you need a publisher subscriber.
     - Maintain two hashmap of hasmap and both will point to same buffer queue
 
     ![](ring-buffer-ds.png)
+https://leetcode.com/problems/design-circular-queue/
+https://leetcode.com/problems/sliding-window-maximum/
 
 ### Storage
 - Either store data as file
