@@ -60,25 +60,28 @@ That's why you need a publisher subscriber.
     - It helps to reduce storage by 60x
     - But multi key will not work
 ### Algorithm
-    - We have to manage two hashmap of hashmap to support query based on serverId or metricId
-    - Choose hashmap as index prefix
-        1. [serverId]: [Timestamp]: [List of metric id]
-        2. [metricId]: [Timestamp]: [List of server id]
-    - How to handle deleting old value?
-    - Use double ended queue
-    - Use ring buffer i.e. circular queue
-    - Ring buffer will hold timestamp of 1 minute
-    - There will be 2 days worth of timestamp in ring buffer (2880 nodes)
-    - This ring is size bound; so TTL of data will be handled.
-    - Memory bound data structure, no chance of memory leak
-    - Maintain two hashmap of hasmap and both will point to same buffer queue
-    - Whenever you have requirement of fix window and data is coming in and out, ring buffer is helpful
-    - It also helps to handle TTL
-    - It also helps to implement time series data
+- We have to manage two hashmap of hashmap to support query based on serverId or metricId
+- Choose hashmap as index prefix
+    1. [serverId]: [Timestamp]: [List of metric id]
+    2. [metricId]: [Timestamp]: [List of server id]
+- How to handle deleting old value?
+- Use double ended queue
+- Use ring buffer i.e. circular queue
+- Ring buffer will hold timestamp of 1 minute
+- There will be 2 days worth of timestamp in ring buffer (2880 nodes)
+- This ring is size bound; so TTL of data will be handled.
+- Memory bound data structure, no chance of memory leak
+- Maintain two hashmap of hasmap and both will point to same buffer queue
+- Whenever you have requirement of fix window and data is coming in and out, ring buffer is helpful
+- It also helps to handle TTL
+- It also helps to implement time series data
 
-    ![](assets/ring-buffer-ds.png)
+![](assets/ring-buffer-ds.png)
+
 https://leetcode.com/problems/design-circular-queue/
+
 https://leetcode.com/problems/sliding-window-maximum/
+
 https://leetcode.com/problems/lru-cache/
 
 ## b. Each micro services consists of one of more tiers
