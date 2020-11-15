@@ -153,6 +153,7 @@ What should be shard key?
 - If I shard by sid then mid based query will sucks (become scatter & gather)
 - If I shard by mid then sid based query will sucks (become scatter & gather)
 - Scatter and gather will take time
+
 Soln: Duplicate the data. Copy data two times. Shard one data model by sid and other by mid.
 Note1: This is the approach used by Linkedin
 
