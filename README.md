@@ -155,6 +155,7 @@ What should be shard key?
 - Scatter and gather will take time
 
 Soln: Duplicate the data. Copy data two times. Shard one data model by sid and other by mid.
+
 Note1: This is the approach used by Linkedin
 
 Q. If shard by time then what will be problem?
