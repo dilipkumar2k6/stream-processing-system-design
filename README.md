@@ -155,12 +155,13 @@ What should be shard key?
 - Scatter and gather will take time
 Soln: Duplicate the data. Copy data two times. Shard one data model by sid and other by mid.
 Note1: This is the approach used by Linkedin
+
 Q. If shard by time then what will be problem?
 If shard by time then it will create write hotspot on a single shard. For a given period, all writes will go into single shard.
 Conclusion:
 - Within the shard, it is already partition based on time block. This is called composite partitioning.
 - App tier will also follow same sharding pattern
-- 
+
 
 
 
